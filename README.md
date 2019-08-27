@@ -7,6 +7,11 @@
 </p> 
 
 ## TODO
- - [ ] cola代码迁移 ![Progress](http://progressed.io/bar/1?title=doing)  
- - [ ] Python3.7支持 ![Progress](http://progressed.io/bar/10?title=doing)   
+ - [ ] cola代码迁移
+ - [ ] Python3.7支持
  
+## Installation
+
+1. 手动下载Chromium
+   
+   下载地址：https://download-chromium.appspot.com/

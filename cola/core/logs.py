@@ -55,10 +55,7 @@ class Log(object):
     # self.logger.addHandler(stream_handler)
 
     def add_file_log(self, filename, level=logging.INFO):
-        handler = logging.FileHandler(filename)
-        handler.setFormatter(self.formatter)
-        handler.setLevel(level)
-        self.logger.addHandler(handler)
+        self.logger.add("file.log", level=level)
 
     # def add_remote_log(self, server, level=logging.INFO):
     #     if ':' in server:
@@ -79,11 +76,11 @@ def get_logger(name='cola', filename=None, server=None, is_master=False,
                basic_level=logging.DEBUG):
     log = Log(name, basic_level)  # log.add_stream_log(basic_level)
 
-    # if filename is not None:
-    #     level = logging.INFO
-    #     if is_master:
-    #         level = logging.ERROR
-    #     log.add_file_log(filename, level)
+    if filename is not None:
+        level = logging.INFO
+        if is_master:
+            level = logging.ERROR
+        log.add_file_log(filename, level)
 
     # if server is not None:
     #     log.add_remote_log(server, logging.INFO)
@@ -148,10 +145,3 @@ class LogRecordSocketReceiver(socketserver.ThreadingTCPServer):
     def shutdown(self):
         socketserver.ThreadingTCPServer.shutdown(self)
         self.abort = True
-
-
-if __name__ == '__main__':
-    log = Log(__name__)
-    x = log.get_logger()
-    x.debug("dsfsdf")
-    logger.error("sdfsdfs")

@@ -18,22 +18,26 @@ Created on 2019-8-26
 
 @author: peniridis
 """
+
 import unittest
-from cola.core.logs import get_logger
+
+from cola.core.opener import PuppeteerOpener
 
 
 class Test(unittest.TestCase):
 
-    def setUp(self):
-        self.client_logger = get_logger(name='cola_test_client', filename='file.log')
+    def testPuppeteerOpener(self):
+        test_url = 'http://www.baidu.com'
+        opener = PuppeteerOpener()
 
-    def testLog(self):
-        self.client_logger.error('Sth happens here')
-        self.client_logger.warning('sth warning here')
-        self.client_logger.info('sth info here')
-        self.client_logger.debug('sth debug here')
-        self.client_logger.critical('sth critical here')
+        # assert 'baidu' in opener.open(test_url)
+
+        br = opener.browse_open(test_url)
+        # assert '百度' in br.title()
+        # assert 'baidu' in br.response().read()
+
 
 
 if __name__ == "__main__":
+    # import sys;sys.argv = ['', 'Test.testName']
     unittest.main()

@@ -10,15 +10,11 @@ sys.path.insert(0, path)
 cola = __import__('cola')
 # version = cola.VERSION
 
-long_description = None
-# with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as f:
-#     long_description = f.read()
 
 setup(
     name='cola',
-    # version=version,
-    # url='http://colaframework.org',
-    # description='A high-level distributed crawling framework',
+    version='0.1',
+    description='A high-level distributed crawling framework',
     # long_description=long_description,
     author='peniridis',
     author_email='roocpeng@foxmail.com',
@@ -40,7 +36,5 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: System :: Clustering'
     ],
-    # install_requires=[
-    #     'pyyaml'
-    # ]
+    install_requires=[]
 )
