@@ -9,7 +9,7 @@
 ## TODO
  - [ ] cola代码迁移
  - [ ] Python3.7支持
- 
+ - [ ] thriftpy
 ## Installation
 
 1. 手动下载Chromium
